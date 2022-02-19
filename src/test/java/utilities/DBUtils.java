@@ -16,14 +16,15 @@ public  class DBUtils {
     //Database e ne zaman baglanmak isterse bu methodu cagrabiliriz
     //Bu method u data cok BeforeMethod icinde setup icin kullanacagiz
 
-    public static void createConnection() {
+    public static void createConnection() { //bu url http ile baslayan degil,
+        // bu oatotencti ile olan,hem adrese goruruyor,hem kullanici adi vesifresi ile o kapidan geciliyor
+        //en cok bunu kulllanacaz,try catch icinde oldugu icin,baska classta  exception gerek yok
+        //!!!!!!!!11ise girince degisecek tek yer url,username,password kismi!!!!!!!!!!!1
         String url="jdbc:sqlserver://184.168.194.58:1433;databaseName=hotelmycamp ; user=techproed;password=P2s@rt65";
-       //bu url http ile baslayan degil,bu oatotencti ile olan,hem adrese goruruyor,hem kullanici adi vesifresi ile o kapidan geciliyor
-
         String username="techproed";
         String password="P2s@rt65";
         try {
-            connection = DriverManager.getConnection(url, username, password); //en cok bunu kulllanacaz,try catch icinde oldugu icin,baska classta  exception gerek yok
+            connection = DriverManager.getConnection(url, username, password);
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
